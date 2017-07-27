@@ -22,6 +22,8 @@
 		D3CA78561F2972A3000F765A /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA78551F2972A3000F765A /* ReusableView.swift */; };
 		D3CA78581F2A838A000F765A /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA78571F2A838A000F765A /* NibLoadableView.swift */; };
 		D3CA785A1F2A8554000F765A /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA78591F2A8554000F765A /* UICollectionView+Ext.swift */; };
+		D3CA785C1F2A9266000F765A /* MutableCollection+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA785B1F2A9266000F765A /* MutableCollection+Ext.swift */; };
+		D3CA785E1F2A94B6000F765A /* Shakeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CA785D1F2A94B6000F765A /* Shakeable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		D3CA78551F2972A3000F765A /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		D3CA78571F2A838A000F765A /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		D3CA78591F2A8554000F765A /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		D3CA785B1F2A9266000F765A /* MutableCollection+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MutableCollection+Ext.swift"; sourceTree = "<group>"; };
+		D3CA785D1F2A94B6000F765A /* Shakeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shakeable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				D3CA78491F294859000F765A /* DropShadow.swift */,
 				D3CA78551F2972A3000F765A /* ReusableView.swift */,
 				D3CA78571F2A838A000F765A /* NibLoadableView.swift */,
+				D3CA785D1F2A94B6000F765A /* Shakeable.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				D3CA78591F2A8554000F765A /* UICollectionView+Ext.swift */,
+				D3CA785B1F2A9266000F765A /* MutableCollection+Ext.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3CA78531F29628A000F765A /* TacoCell.swift in Sources */,
+				D3CA785C1F2A9266000F765A /* MutableCollection+Ext.swift in Sources */,
 				D3CA78221F293B8A000F765A /* AppDelegate.swift in Sources */,
 				D3CA784A1F294859000F765A /* DropShadow.swift in Sources */,
 				D3CA78581F2A838A000F765A /* NibLoadableView.swift in Sources */,
@@ -284,6 +291,7 @@
 				D3CA78481F294258000F765A /* MainVC.swift in Sources */,
 				D3CA78501F29597A000F765A /* DataService.swift in Sources */,
 				D3CA784E1F294F51000F765A /* Taco.swift in Sources */,
+				D3CA785E1F2A94B6000F765A /* Shakeable.swift in Sources */,
 				D3CA784C1F294BA8000F765A /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

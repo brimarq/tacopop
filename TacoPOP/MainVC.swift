@@ -20,6 +20,7 @@ class MainVC: UIViewController, DataServiceDelegate {
         
         ds.delegate = self
         ds.loadDeliciousTacoData()
+        ds.tacoArray.shuffle()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -27,17 +28,18 @@ class MainVC: UIViewController, DataServiceDelegate {
         // Add drop shadow protocol 
         headerView.addDropShadow()
         
-        /** This is the old way
+        /** OLD WAY
         let nib = UINib(nibName: "TacoCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "TacoCell")
          */
         
-        // By adding the created NibLoadableView protocol to the TacoCell class, this is all that's needed:
+        // NEW WAY: By adding the created NibLoadableView protocol to the TacoCell class, this is all that's needed:
         collectionView.register(TacoCell.self)
     }
     
     func deliciousTacoDataLoaded() {
         print("Delicious Taco Data Loaded")
+        collectionView.reloadData()
     }
 
 }
@@ -53,15 +55,25 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        /** OLD WAY
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TacoCell", for: indexPath) as? TacoCell {
             cell.configureCell(taco: ds.tacoArray[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
+        */
+        
+        // NEW WAY:
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as TacoCell
+        cell.configureCell(taco: ds.tacoArray[indexPath.row])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if let cell = collectionView.cellForItem(at: indexPath) as? TacoCell {
+            cell.shake()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
