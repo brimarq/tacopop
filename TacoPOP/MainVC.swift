@@ -26,6 +26,14 @@ class MainVC: UIViewController, DataServiceDelegate {
         
         // Add drop shadow protocol 
         headerView.addDropShadow()
+        
+        /** This is the old way
+        let nib = UINib(nibName: "TacoCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "TacoCell")
+         */
+        
+        // By adding the created NibLoadableView protocol to the TacoCell class, this is all that's needed:
+        collectionView.register(TacoCell.self)
     }
     
     func deliciousTacoDataLoaded() {
